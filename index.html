@@ -1,7 +1,13 @@
 <!DOCTYPE html>
 <html lang="en">
 <head>
+    
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0, shrink-to-fit=no">
     <title>Home Page</title>
+    <!-- Bootstrap CDN copied from https://getbootstrap.com/docs/4.1/getting-started/introduction/ -->
+    <link rel="stylesheet" href="https://stackpath.bootstrapcdn.com/bootstrap/4.1.3/css/bootstrap.min.css" integrity="sha384-MCw98/SFnGE8fJT3GXwEOngsV7Zt27NXFoaoApmYm81iuXoPkFOJwJ8ERdknLPMO" crossorigin="anonymous">
+    <link rel="stylesheet" href="./styles/restaurantStyles.css" type="text/css">
     <style>
         span.Restaurant-Description, p.review, div.review-links ,img {
           display: block;
@@ -13,19 +19,16 @@
 <body>
     <main>
         <header>
-            <h1 style="text-align: center">TaoYan Restaurant</h1>
+            <h1>TaoYan Restaurant</h1>
         </header>
         
         <nav>
-            <hr />
-            <a href="" style="margin-left: 8px;">Home</a>
-            <a href="./Menu.html" style="margin: 0px 20px">Menu</a>
-            <a href="./contactus.html">Contact Us</a>
-            <hr />
+            <a class="btn badge-pill" href="">Home</a>
+            <a class="btn badge-pill" href="./Menu.html" >Menu</a>
+            <a class="btn badge-pill" href="./contactus.html">Contact Us</a>
         </nav>
-
         <section>
-            <img src="./images/bar-984527_640.jpg" alt="Restaurant" style="width: 400px; height: 150px;">
+            <img src="./images/bar-984527_640.jpg" alt="Restaurant" width="400px" height="150px">
             <br />
             <span class="Restaurant-Description" style="width: 400px;">Restaurant Description</span>
             <span class="Restaurant-Description" style="width: 400px;">A quality and relaxing rural country pub, run by award winning owners, in the beautiful Berkshire village of Peasemore just a short drive from the A34 and junctions 13 and 14 of the M4. The building and decor are charming and rustic, with elegant modern touches. Relax by the cozy log burner perfect for winter evenings or enjoy outdoor seating overlooking open country fields or in a pretty courtyard filled with flowers in the summer months. A daily menu, all freshly prepared in the pub kitchen, includes fresh fish, pies, steaks and chef's daily specials with main course prices ranging from £11.50 - £19.50. As all dishes are prepared in the pub kitchen, they are able to cater for most dietary needs, with most sauces, soups and gravy all created gluten free. The Fox also offers gluten free bread and gluten free Yorkshire puddings on a Sunday.</span>
@@ -38,11 +41,14 @@
             </div>
         </section>
 
-        <footer style="text-align: center">
-            <hr />
+        <footer>
             <p>811 53rd St, Brook, MZ 11220</p>
             <p>202-555-0133</p>
         </footer>
     </main>
+    <!-- CDN links copied from https://getbootstrap.com/docs/4.1/getting-started/introduction/ -->
+    <script src="https://code.jquery.com/jquery-3.3.1.slim.min.js" integrity="sha384-q8i/X+965DzO0rT7abK41JStQIAqVgRVzpbzo5smXKp4YfRvH+8abtTE1Pi6jizo" crossorigin="anonymous"></script>
+    <script src="https://cdnjs.cloudflare.com/ajax/libs/popper.js/1.14.3/umd/popper.min.js" integrity="sha384-ZMP7rVo3mIykV+2+9J3UJ46jBk0WLaUAdn689aCwoqbBJiSnjAK/l8WvCWPIPm49" crossorigin="anonymous"></script>
+    <script src="https://stackpath.bootstrapcdn.com/bootstrap/4.1.3/js/bootstrap.min.js" integrity="sha384-ChfqqxuZUCnJSK3+MXmPNIyE6ZbWh2IMqE241rYiqJxyMiZ6OW/JmZQ5stwEULTy" crossorigin="anonymous"></script>
 </body>
 </html>
