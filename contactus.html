@@ -9,11 +9,58 @@
     <link rel="stylesheet" href="./styles/restaurantStyles.css" type="text/css">
     <style>
         section {
-          /* display: block;
-          margin-left: auto;
-          margin-right: auto; */
-          display: flex;
-          justify-content: center;
+            display: flex;
+            justify-content: center; 
+        }
+        form{
+            width: 60%;
+        }
+        label, span{
+            font-size: 1.1em;
+            font-weight: bold;
+            width: 40%;
+            display: inline-block;
+            text-align: right;
+            
+        }
+        input[type="text"], input[type="email"]{
+            border: 2px solid #0d1f2d;
+            width: 50%;
+            /* padding: 8px; */
+            margin: 12px 0;
+            box-sizing: border-box;
+            font-size: 1.1em;
+        }
+        select, textarea {
+            margin: 12px 0;
+            font-size: 1em;
+        }
+        select{
+            border: 2px solid #0d1f2d;
+            width: 50%; 
+        }
+
+        textarea {
+            width: 50%;
+            height: 200px;
+            padding: 12px 20px;
+            box-sizing: border-box;
+            border: 2px solid #0d1f2d;
+            border-radius: 3px;
+            background-color: #fff;
+            resize: none;
+        }
+        #comment{
+            position: relative;
+            bottom: 200px;
+            font-weight: normal;
+        }
+        input[type="submit"] {
+            font-size: 1.2em;
+            padding: 4px 8px;
+            background-color: #546a7b;
+            color: #fef9ff;
+            margin: 12px 0;  
         }
     </style>
 </head>
@@ -32,41 +79,47 @@
         <section >
             <form action="submit.html" method="POST">
                 <label for="name">Name:</label>
-                <input type="text" id="name" name="name"> <br />
+                <input type="text" id="name" name="name" required> <br />
                 <label for="email">Email:</label>
-                <input type="email" id="email" name="email"> <br />
+                <input type="email" id="email" name="email" required> <br />
                 <label for="phone">Phone:</label>
-                <input type="text" id="phone" name="phone"> <br />
+                <input type="text" id="phone" name="phone" required> <br />
 
                 <label for="contact">Reason for Inquiry:</label>
-                <select name="contact" id="contact">
+                <select name="contact" id="contact" required>
                     <option value="default" selected>--Catering--</option>
                     <option value="private-party" >Private Party</option>
                     <option value="feedback" >Feedback</option>
                     <option value="other" >Other</option>
                 </select>
                 <br />
-                <label for="info">Additional Information</label>
+                <label id="comment" for="info">Additional Information: </label>
                 <textarea id="info" name="info"></textarea><br />
+
+
                 <span>Have you been to the restaurant:</span>
                 <input type="radio" id="choice2" name="questionnaire" value="no" checked>
-                <label for="choice2">No</label>
+                <label style="width: 2%; margin-right: 20px;" for="choice2">No</label>
                 <input type="radio" id="choice1" name="questionnaire" value="yes">
-                <label for="choice1">Yes</label> <br />
+                <label style="width: 2%;" for="choice1">Yes</label> <br />
 
-                <span>Best days to contact you: </span>
+                <span style="font-weight: normal;">Best days to contact you: </span>
                 <input type="checkbox" id="Monday" name="Monday" value="Monday">
-                <label for="Monday">M</label>
+                <label style="width: 2%; margin-right: 20px;" for="Monday">M</label>
                 <input type="checkbox" id="Tuesday" name="Tuesday" value="Tuesday">
-                <label for="Tuesday">T</label>
+                <label style="width: 2%; margin-right: 20px;" for="Tuesday">T</label>
                 <input type="checkbox" id="Wednesday" name="Wednesday" value="Wednesday">
-                <label for="Wednesday">W</label>
+                <label style="width: 2%; margin-right: 20px;" for="Wednesday">W</label>
                 <input type="checkbox" id="Thursday" name="Thursday" value="Thursday">
-                <label for="Thursday">Th</label>
+                <label style="width: 2%; margin-right: 20px;" for="Thursday">Th</label>
                 <input type="checkbox" id="Firday" name="Firday" value="Firday">
-                <label for="Firday">F</label>               
+                <label style="width: 2%; margin-right: 20px;" for="Firday">F</label>               
                 <br />
-                <input type="submit" name="submit" value="Send Request">
+                
+                <div style="text-align: center;">
+                    <input type="submit" name="submit" value="Send Request">
+                </div>
+
             </form>
             
         </section>
