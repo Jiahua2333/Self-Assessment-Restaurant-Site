@@ -5,9 +5,9 @@ body {
   width: 100%;
   margin: auto;
 }
-header {
+header div.jumbotron {
   background-color: brown;
-  height: 100px;
+  /* height: 150px; */
   text-align: center;
   padding: 30px 10px 20px 10px;
   box-sizing: border-box;
@@ -32,7 +32,7 @@ nav {
   margin-bottom: 12px;
 }
 nav .btn {
-  background-color: #5b7d87;
+  /* background-color: #5b7d87; */
   color: #fef9ff;
   margin: 0 20px;
   text-decoration: underline;
@@ -44,7 +44,7 @@ nav .btn:active {
   text-decoration: none;
 }
 nav .btn:visited {
-  color: #968f97;
+  color: #ebdfec;
 }
 /* nav a {
   background-color: #5b7d87;
