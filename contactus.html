@@ -1,73 +1,64 @@
+<!-- 
+    Common events in JavaScript:{
+        onclick: invoke when user click the target,
+        onChange: invoke when the target html element changed,
+        onSubmit: invoke to submit a form to the server,
+        onload: invoke when the browser has finished loading the page.
+    }
+    
+ -->
 <!DOCTYPE html>
+<!-- 
+    Name: Jiahua Liao
+    Project: Restaurant site
+    Time: 8/20/2020
+ -->
 <html lang="en">
 <head>   
+    
+    <!-- meta data for using Bootstrap and responsive website -->
     <meta charset="UTF-8">
     <meta name="viewport" content="width=device-width, initial-scale=1.0, shrink-to-fit=no">
+
     <title>Contact Us</title>
     <!-- Bootstrap CDN copied from https://getbootstrap.com/docs/4.1/getting-started/introduction/ -->
     <link rel="stylesheet" href="https://stackpath.bootstrapcdn.com/bootstrap/4.1.3/css/bootstrap.min.css" integrity="sha384-MCw98/SFnGE8fJT3GXwEOngsV7Zt27NXFoaoApmYm81iuXoPkFOJwJ8ERdknLPMO" crossorigin="anonymous">
+
+    <!-- Link for home icorn -->
     <link rel="stylesheet" href="https://fonts.googleapis.com/icon?family=Material+Icons">
     <link rel="stylesheet" href="./styles/restaurantStyles.css" type="text/css">
+    
     <style>
         section {
+            /* All of the content in this section is horizontal center */
             display: flex;
             justify-content: center; 
         }
         form{
             width: 60%;
         }
-        label, span{
+        label{
             font-size: 1.1em;
             font-weight: bold;
             width: 40%;
             display: inline-block;
             text-align: right;
-            
         }
-        input[type="text"], input[type="email"]{
-            border: 2px solid #0d1f2d;
-            width: 50%;
-            /* padding: 8px; */
-            margin: 12px 0;
-            box-sizing: border-box;
-            font-size: 1.1em;
-        }
-        select, textarea {
-            margin: 12px 0;
-            font-size: 1em;
-        }
-        select{
-            border: 2px solid #0d1f2d;
-            width: 50%; 
-        }
-
-        textarea {
-            width: 50%;
-            height: 200px;
-            padding: 12px 20px;
-            box-sizing: border-box;
-            border: 2px solid #0d1f2d;
-            border-radius: 3px;
-            background-color: #fff;
-            resize: none;
-        }
-        #comment{
-            position: relative;
-            bottom: 200px;
-            font-weight: normal;
-        }
-        input[type="submit"] {
-            font-size: 1.2em;
-            padding: 4px 8px;
-            background-color: #546a7b;
-            color: #fef9ff;
-            margin: 12px 0;  
-        }
+        /* animation for the button*/
+        button[type="submit"]:hover, button[type="reset"]:hover {
+            text-decoration: underline;
+        } 
+        button[type="submit"]:active, button[type="reset"]:active {
+            text-decoration: none;
+            font-weight: bold;
+        } 
     </style>
+    
 </head>
 <body>
     <main>
         <header>
+            <!-- Using Bootstrap jumbotron for the binner -->
             <div class="jumbotron jumbotron-fluid">
                 <div class="container">
                   <h1 class="display-4">TaoYan Restaurant</h1>
@@ -76,67 +67,144 @@
             </div>
         </header>
         
+        <!-- Nevigation bar with 3 hypelinks(buttons) -->
         <nav>
             <a class="btn badge-pill badge-info" href="./index.html"><i class="material-icons">home</i></a>
             <a class="btn badge-pill badge-info" href="./Menu.html" >Menu</a>
             <a class="btn badge-pill badge-info" href="">Contact Us</a>
         </nav>
 
-        
+        <!-- Whole form -->
         <section >
-            <form action="submit.html" method="POST">
-                <label for="name">Name:</label>
-                <input type="text" id="name" name="name" required> <br />
-                <label for="email">Email:</label>
-                <input type="email" id="email" name="email" required> <br />
-                <label for="phone">Phone:</label>
-                <input type="text" id="phone" name="phone" required> <br />
+            <!-- 
+                needs-validation: let website do the validate and tell the website the input hasn't been checked. 
+                onsubmit: an event trigger when user submit the form
+                onreset: let all input back to the original stage.
+             -->
+            <form name="contactForm" class="needs-validation" onsubmit="return validate();" onreset="resetView();"  novalidate>
 
-                <label for="contact">Reason for Inquiry:</label>
-                <select name="contact" id="contact" required>
-                    <option value="default" selected>--Catering--</option>
-                    <option value="private-party" >Private Party</option>
-                    <option value="feedback" >Feedback</option>
-                    <option value="other" >Other</option>
-                </select>
-                <br />
-                <label id="comment" for="info">Additional Information: </label>
-                <textarea id="info" name="info"></textarea><br />
-
-
-                <span>Have you been to the restaurant:</span>
-                <input type="radio" id="choice2" name="questionnaire" value="no" checked>
-                <label style="width: 2%; margin-right: 20px;" for="choice2">No</label>
-                <input type="radio" id="choice1" name="questionnaire" value="yes">
-                <label style="width: 2%;" for="choice1">Yes</label> <br />
-
-                <span style="font-weight: normal;">Best days to contact you: </span>
-                <input type="checkbox" id="Monday" name="Monday" value="Monday">
-                <label style="width: 2%; margin-right: 20px;" for="Monday">M</label>
-                <input type="checkbox" id="Tuesday" name="Tuesday" value="Tuesday">
-                <label style="width: 2%; margin-right: 20px;" for="Tuesday">T</label>
-                <input type="checkbox" id="Wednesday" name="Wednesday" value="Wednesday">
-                <label style="width: 2%; margin-right: 20px;" for="Wednesday">W</label>
-                <input type="checkbox" id="Thursday" name="Thursday" value="Thursday">
-                <label style="width: 2%; margin-right: 20px;" for="Thursday">Th</label>
-                <input type="checkbox" id="Firday" name="Firday" value="Firday">
-                <label style="width: 2%; margin-right: 20px;" for="Firday">F</label>               
-                <br />
-                
-                <div style="text-align: center;">
-                    <input type="submit" name="submit" value="Send Request">
+                <div class="form-group row mb-4">
+                  <label for="name" class="col-sm-4 col-form-label">Name: </label>
+                  <div class="col-sm-5">
+                    <input type="text" class="form-control" id="name" placeholder="name" required>
+                  </div>
                 </div>
 
+                <!-- The email should be checked for the format -->
+                <div class="form-group row mb-4">
+                  <label for="inputEmail3" class="col-sm-4 col-form-label">Email: </label>
+                  <div class="col-sm-5">
+                    <input type="email" class="form-control" id="inputEmail3" placeholder="Email" required>
+                    <!-- show the error message -->
+                    <div class="invalid-tooltip">
+                        Please type a email like this: "xxx@xxx"!
+                    </div>
+                  </div>
+                </div>
+
+                <div class="form-group row mb-4">
+                    <label for="phone" class="col-sm-4 col-form-label">Phone: </label>
+                    <div class="col-sm-5">
+                      <input type="text" class="form-control" id="phone"  placeholder="123-456-7890" required>
+                      <!-- show the current format for the phone -->
+                      <span id="PhoneChecked" style="color: red;"></span>
+                    </div>
+                </div>
+
+                <div class="form-group row mb-4">
+                    <label for="contact" class="col-sm-4 col-form-label">Reason for Inquiry:</label>
+                    <div class="col-sm-5">
+                        <select class="form-control" name="contact" id="contact" required>
+                            <option value="default" selected>--Catering--</option>
+                            <option value="private-party" >Private Party</option>
+                            <option value="feedback" >Feedback</option>
+                            <option value="other" >Other</option>
+                        </select>
+                    </div>                 
+                </div>
+
+                <div class="form-group row mb-4">
+                    <label for="info" class="col-sm-4 col-form-label" style="font-weight:normal;">Additional Information: </label>
+                    <div class="col-sm-5">
+                      <textarea name="info" id="info" class="form-control" style="height: 150px;"></textarea>
+                    </div>
+                </div>
+
+                <fieldset class="form-group mb-4">
+                  <div class="row">
+                    <legend class="col-form-label col-sm-4 pt-0" style="text-align: right; font-weight: bold;">Have you been the restaurant?</legend>
+                    <div class="col-sm-5 form-row">
+                      <div class="form-check mr-5">
+                        <input class="form-check-input" type="radio" name="gridRadios" id="gridRadios1" value="No" checked>
+                        <label class="form-check-label" for="gridRadios1">
+                          No
+                        </label>
+                      </div>
+                      <div class="form-check">
+                        <input class="form-check-input" type="radio" name="gridRadios" id="gridRadios2" value="Yes">
+                        <label class="form-check-label" for="gridRadios2">
+                          Yes
+                        </label>
+                      </div>
+                    </div>
+                  </div>
+                </fieldset>
+                
+                <div class="form-group row mb-4">
+                  <div class="col-sm-4" style="text-align: right;">Best days to contact you: </div>
+                  <div class="col-sm-5 form row">
+                    <div class="form-check mr-3">
+                      <input class="form-check-input" type="checkbox" id="Monday">
+                      <label class="form-check-label" for="Monday">
+                        M
+                      </label>
+                    </div>
+                    <div class="form-check mr-3"">
+                      <input class="form-check-input" type="checkbox" id="Tuesday">
+                      <label class="form-check-label" for="Tuesday">
+                        T
+                      </label>
+                    </div>
+                    <div class="form-check mr-3"">
+                      <input class="form-check-input" type="checkbox" id="Wednesday">
+                      <label class="form-check-label" for="Wednesday">
+                        W
+                      </label>
+                    </div>
+                    <div class="form-check mr-3"">
+                      <input class="form-check-input" type="checkbox" id="Thursday">
+                      <label class="form-check-label" for="Thursday">
+                        Th
+                      </label>
+                    </div>
+                    <div class="form-check mr-3"">
+                      <input class="form-check-input" type="checkbox" id="Friday">
+                      <label class="form-check-label" for="Friday">
+                        F
+                      </label>
+                    </div>
+                  </div>
+                </div>
+
+                <div class="col-sm-12" style="text-align: center;">
+                    <div class="form-row">
+                        <div class="form-group col">
+                            <button type="submit" id="submitButton" class="btn btn-primary">Submit</button>
+                            <button type="reset" class="btn btn-secondary">Reset</button>
+                        </div>
+                    </div>
+                </div>
             </form>
-            
         </section>
 
+        <!-- Footer with address and phone -->
         <footer>
             <p>811 53rd St, Brook, MZ 11220</p>
             <p>202-555-0133</p>
         </footer>
     </main>
     <!-- CDN links copied from https://getbootstrap.com/docs/4.1/getting-started/introduction/ -->
+    <script src="./javascripts/controler.js"></script>
     <script src="https://code.jquery.com/jquery-3.3.1.slim.min.js" integrity="sha384-q8i/X+965DzO0rT7abK41JStQIAqVgRVzpbzo5smXKp4YfRvH+8abtTE1Pi6jizo" crossorigin="anonymous"></script>
     <script src="https://cdnjs.cloudflare.com/ajax/libs/popper.js/1.14.3/umd/popper.min.js" integrity="sha384-ZMP7rVo3mIykV+2+9J3UJ46jBk0WLaUAdn689aCwoqbBJiSnjAK/l8WvCWPIPm49" crossorigin="anonymous"></script>
     <script src="https://stackpath.bootstrapcdn.com/bootstrap/4.1.3/js/bootstrap.min.js" integrity="sha384-ChfqqxuZUCnJSK3+MXmPNIyE6ZbWh2IMqE241rYiqJxyMiZ6OW/JmZQ5stwEULTy" crossorigin="anonymous"></script>

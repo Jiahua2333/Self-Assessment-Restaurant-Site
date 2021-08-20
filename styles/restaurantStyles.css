@@ -1,3 +1,4 @@
+/* Styling for the all page, the default styling  */
 body {
   background-color: navajowhite;
   color: rgb(15, 14, 14);
@@ -12,9 +13,9 @@ header div.jumbotron {
   padding: 30px 10px 20px 10px;
   box-sizing: border-box;
 }
-h1 {
+/* h1 {
   margin: auto;
-}
+} */
 footer {
   background-color: brown;
   height: 100px;
@@ -46,17 +47,3 @@ nav .btn:active {
 nav .btn:visited {
   color: #ebdfec;
 }
-/* nav a {
-  background-color: #5b7d87;
-  color: #fef9ff;
-  padding: 8px;
-  border: thin solid #101418;
-  text-align: center;
-  display: block;
-  margin: 20px 20px 10px 20px;
-  width: 100px;
-  float: left;
-}
-.clear-float {
-  clear: both;
-} */
